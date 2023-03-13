@@ -1,0 +1,73 @@
+﻿@model User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Regester</title>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/regester.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="regester">
+        <h1 class="text-center">Register For Fashion Store</h1>
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    @Html.ValidationMessageFor(n => n.username, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(n => n.username, new { @class = "form-control", placeholder = "Enter your username" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.ValidationMessageFor(n => n.email, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(n => n.email, new { @class = "form-control", placeholder = "Enter your E-mail" })
+                </div>
+                <div class="form-group col-md-6 ">
+                    @Html.ValidationMessageFor(n => n.address, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(n => n.address, new { @class = "form-control", placeholder = "Enter your Address" })
+                </div>
+                <div class="form-group col-md-6 ">
+                    @Html.ValidationMessageFor(n => n.password, null, new { @class = "text-danger" })
+                    @Html.PasswordFor(n => n.password, new { @class = "form-control", placeholder = "Enter your password" })
+                </div>
+                <div class="form-group col-md-6 ">
+                    @Html.ValidationMessageFor(n => n.confirm_password, null, new { @class = "text-danger" })
+                    @Html.PasswordFor(n => n.confirm_password, new { @class = "form-control", placeholder = "Confirm your password" })
+                </div>
+                <div class="form-group col-md-6 ">
+                    @Html.ValidationMessageFor(n => n.phonenumber, null, new { @class = "text-danger" })
+                    @Html.PasswordFor(n => n.phonenumber, new { @class = "form-control", placeholder = "Enter your Phonenumber" })
+                </div>
+                <div class="form-group col-md-12 ">
+                    @Html.ValidationMessageFor(n => n.user_photo, null, new { @class = "text-danger" })
+                    @Html.LabelFor(n => n.user_photo)
+                    <input type="file" class="form-control" name="img" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input type="submit" value="Save" class="btn btn-primary  d-block m-auto" style="width:100%" />
+                    @{
+                        var s = ViewBag.status;
+                        if(s != null)
+                        {
+                            <h3 class="alert alert-danger" role="alert">@ViewBag.status</h3>
+                        }
+                    }
+
+                </div>
+            </div>
+            
+        </form>
+    </div>
+
+    <script src="/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="/Scripts/umd/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery.validate.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model List<Order>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddToCard</title>
+    <link href="/Content/ADdToCart.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="cart">
+            @foreach (var i in Model)
+            {
+                <div class="cartItem row">
+                    <img src="/imageForShow/@i.Product.product_photo" class="col-4" />
+                    <input class="col-8" type="number" name="quantity" min="1">
+                    <h1>@i.User.username</h1>
+                    <h4>@i.total_price</h4>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

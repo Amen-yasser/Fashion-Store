@@ -1,0 +1,187 @@
+﻿@model List<MyFashionStore.Models.Product>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section myStyle
+{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+}
+<!--------------------------------Slider------------------------------------------->
+<div class="Banner">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="/imageForShow/menFashion.jpg" class=" w-100" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Men's Fashion</h1>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="/imageForShow/w.jpg" class=" w-100" />
+                <div class="carousel-caption d-none d-md-block women">
+                    <h1>Women's Fashion</h1>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="/imageForShow/pexels-victoria-borodinova-1619697.jpg" class=" w-100" />
+                <div class="carousel-caption d-none d-md-block ">
+                    <h1>Kids Fashion</h1>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </button>
+    </div>
+</div>
+<!--------------------------------Slider------------------------------------------->
+<!--------------------------------over view------------------------------------------->
+<div class="over-view">
+    <h1 class="text-center under-line"><span>Over</span>View</h1>
+    <div class="container text-center">
+        <p>
+            Lorem ipsum dolor,
+            sit amet consectetur adipisicing elit.
+            Blanditiis perferendis<br> voluptate totam deserunt?
+            Deserunt, unde?
+        </p>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                @{
+                    int i = 0;
+                }
+                @foreach (var item in Model)
+                {
+                    if (i == 8)
+                    { break; }
+                    <div class="swiper-slide">
+                        <img src="/imageForShow/@item.product_photo" />
+                        <div class="row discreption">
+                            <div class="col type">
+                                <h5>@item.Category.cat_name</h5>
+                            </div>
+                            <div class="col goto">
+                                <a href="products.html">More...</a>
+                            </div>
+                        </div>
+                    </div>
+                    i++;
+                }
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+<!--------------------------------over view------------------------------------------->
+<!--------------------------------Offer------------------------------------------->
+
+<div class="offer" style="background-image:url('../imageForShow/@ViewBag.offer.product_photo')">
+    <div class="container">
+        <div class="details">
+            <h5>Best Price For You</h5>
+            <h1>Deal of the day</h1>
+            <p>
+                Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit.<br> Eius porro,
+                hic odit aperiam quis consequuntur.
+            </p>
+            <h2>CRAZY OFFER</h2>
+            <h3>
+                <span>$@ViewBag.offer.price</span>
+                NOW
+                <span>$30 Only</span>
+            </h3>
+            <div class="count-down" id="count-down"></div>
+        </div>
+    </div>
+</div>
+
+<!--------------------------------End of Offer------------------------------------------->
+
+<!--------------------------------Testemonial------------------------------------------->
+<div class="test container text-center">
+    <h1 class="text-center">Testemonial</h1>
+    <div class="container">
+        <div id="test" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#test" data-slide-to="0" class="active"></li>
+                <li data-target="#test" data-slide-to="1"></li>
+                <li data-target="#test" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="/imageForShow/04.jpg" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Amen Yasser</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ea,
+                            quas voluptatum neque at consectetur suscipit impedit ratione nemo natus?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="carousel-item ">
+                    <img src="/imageForShow/02.jpg" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Amen Yasser</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ea,
+                            quas voluptatum neque at consectetur suscipit impedit ratione nemo natus?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="carousel-item ">
+                    <img src="/imageForShow/03.jpg" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Amen Yasser</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ea,
+                            quas voluptatum neque at consectetur suscipit impedit ratione nemo natus?
+                        </p>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <a class="carousel-control-prev" href="#test" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#test" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!--------------------------------End of Testemonial------------------------------------------->
+
+
+
+
+@section MyScripts
+    {
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/Scripts/Home_offer.js"></script>
+    <script src="/Scripts/homeSwipper.js"></script>
+} 

@@ -1,0 +1,131 @@
+/* banner*/
+.banner-about {
+    background-image: url('../imageForShow/banner-about.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    margin-top: 0;
+    position: relative;
+}
+.banner-about .over
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.banner-about .container h1
+{
+    color:white;
+    position:absolute;
+    left: 50%;
+    top: 30%;
+    transform:translate(-50%,-50%);
+    font-size: 120px;
+    font-family: cursive;
+    text-shadow: 10px 10px 10px var(--main-color);
+}
+/*End of banner*/
+
+
+
+/* content*/
+.content
+{
+    margin-top: 40px;
+    margin-bottom:40px;
+}
+.content .details 
+{
+
+    align-items: center;
+    justify-content: space-around;
+}
+.content .details .col
+{
+    padding: 10px;
+}
+.content .details .disc
+{
+    padding-left: 100px;
+}
+.content .details .disc h3
+{
+    color:var(--main-color);
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: cursive;
+}
+.content .details .disc p
+{
+    font-style: italic;
+    color:gray
+}
+.content .details .show img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 4px solid var(--main-color);
+    padding:3px;
+    box-shadow: 0px -1px 16px var(--main-color);
+              
+}
+
+/*End of content*/
+
+
+/*Clints*/
+.clints
+{
+    background-color:#f7f6f2;
+    height: 300px;
+    margin-top: 40px;
+
+    position: relative;
+}
+.clints .container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.clints .numbers h6
+{
+    color:var(--main-color);
+    font-weight: bold;
+    font-style:italic;
+    font-family: cursive;
+}
+.clints .numbers
+{
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+.clints .numbers.active 
+{
+    animation: showA 0.5s ease-in-out forwards;
+
+}
+/*End of Clints*/
+
+
+@keyframes showA {
+    0% {
+        opacity: 0.2;
+
+    }
+    50% {
+        opacity: 0.5;
+
+    }
+    100% {
+        opacity: 1;
+
+    }
+    
+}

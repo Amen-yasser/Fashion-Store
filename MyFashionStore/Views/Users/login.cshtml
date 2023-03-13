@@ -1,0 +1,53 @@
+﻿@model User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>login</title>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/Login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login">
+        <h1 class="text-center">Login For Fashion Store</h1>
+        <form method="post">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    @Html.ValidationMessageFor(n => n.email, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(n => n.email, new { @class = "form-control", placeholder = "Enter your username" })
+                </div>
+
+                <div class="form-group col-md-12 ">
+                    @Html.ValidationMessageFor(n => n.password, null, new { @class = "text-danger" })
+                    @Html.PasswordFor(n => n.password, new { @class = "form-control", placeholder = "Enter your password" })
+                </div>
+                <div class="form-group col-md-12">
+                    <input type="submit" value="Login" class="btn btn-primary  d-block m-auto" style="width:100%" />
+                    @{
+                        var s = ViewBag.status;
+                        if (s != null)
+                        {
+                            <h5 class="alert alert-danger" role="alert">@ViewBag.status</h5>
+                        }
+                    }
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="/Scripts/umd/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery.validate.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

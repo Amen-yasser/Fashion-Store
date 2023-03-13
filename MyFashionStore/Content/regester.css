@@ -1,0 +1,53 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+:root {
+    --main-color: rgb(123, 75, 7);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.regester 
+{
+    background-image: url('../imageForShow/regester.jpg');
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    min-height:100vh;
+}
+.regester form
+{
+    width:40%;
+    margin:40px auto;
+    background-color:white;
+    box-shadow: 6px 12px 45px black;
+    padding:20px;
+    border-radius:20px
+}
+.regester form input
+{
+    font-style:italic;
+}
+    .regester h1 {
+        padding-top: 30px;
+        font-weight: bold;
+        font-style: italic;
+        font-family: cursive;
+        text-shadow: 5px 5px 3px #686868;
+    }
+
+
+    @media(max-width:600px){
+        .regester form
+        {
+            width:100%;
+        }
+        .regester {
+            padding: 0 10px;
+            min-height: 106vh;
+        }
+    }

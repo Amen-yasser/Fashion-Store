@@ -1,0 +1,46 @@
+﻿@model List<Product>
+@{
+    ViewBag.Title = "product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section myStyle
+{
+    <link href="/Content/products.css" rel="stylesheet" />
+}
+
+
+<h1 class="alert-danger">@ViewBag.st</h1>
+<div class="product">
+    <div class="container">
+        <ul class="list-unstyled buttons row" id="mix1">
+            <li data-filter="all" class="col">All</li>
+            <li data-filter=".women" class="col">Women</li>
+            <li data-filter=".men" class="col">Men</li>
+            <li data-filter=".kids" class="col">Kids</li>
+            <li data-filter=".Accesories" class="col">Accesoreies</li>
+            <li><a href="/Products/Card">My Card</a></li>
+        </ul>
+        <div class="products-items text-center">
+            <div class="row items">
+                @foreach (var i in Model)
+                {
+                    <div class="mix @i.Category.cat_name col-md-3">
+                        <img src="/imageForShow/@i.product_photo">
+                        <div class="row disc">
+                            <div class="type col-3">@i.Category.cat_name</div>
+                            <div class="price col-9">prince: @i.price</div>
+                            <div class="col-12"><a href="/Products/AddToCard/@i.product_id">ADD</a></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section MyScripts
+{
+    <script src="/Scripts/mixitup.min.js"></script>
+    <script src="/Scripts/mixUp.js"></script>
+}

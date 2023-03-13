@@ -1,0 +1,53 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+:root {
+    --main-color: rgb(123, 75, 7);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.login {
+    background-image: url('../imageForShow/regester.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.login form {
+    width: 40%;
+    margin: 40px auto;
+    background-color: white;
+    box-shadow: 6px 12px 45px black;
+    padding: 20px;
+    border-radius: 20px
+}
+
+    .login form input {
+        font-style: italic;
+    }
+
+.login h1 {
+    padding-top: 30px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: cursive;
+    text-shadow: 5px 5px 3px #686868;
+}
+
+
+@media(max-width:600px) {
+    .login form {
+        width: 100%;
+    }
+
+    .login {
+        padding: 0 10px;
+        min-height: 106vh;
+    }
+}

@@ -1,0 +1,102 @@
+﻿@model Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Addproduct</title>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/fontawesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/AdminCSS/AddProduct.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="AddProduct">
+        <h1 class="text-center text-monospace font-italic">Add Product</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="form-group col-md-12 row">
+                    <div class="col">
+                        @Html.LabelFor(n => n.product_name)
+                    </div>
+                    <div class="col">
+                        @Html.TextBoxFor(n => n.product_name, new { @class = "form-control" })
+                    </div>
+                    <div class="col">
+                        @Html.ValidationMessageFor(n => n.product_name, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 row">
+                    <div class="col">
+                        @Html.LabelFor(n => n.price)
+                    </div>
+                    <div class="col">
+                        @Html.TextBoxFor(n => n.price, new { @class = "form-control" })
+                    </div>
+                    <div class="col">
+                        @Html.ValidationMessageFor(n => n.price, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 row">
+                    <div class="col">
+                        @Html.LabelFor(n => n.category_id)
+                    </div>
+                    <div class="col">
+                        <select class="form-control">
+                            @foreach(var cat in ViewBag.category)
+                            {
+                                <option value="@cat.cat_id">@cat.cat_name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col">
+                        @Html.ValidationMessageFor(n => n.category_id, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 row">
+                    <div class="col">
+                        @Html.LabelFor(n => n.product_photo)
+                    </div>
+                    <div class="col">
+                        <input type="file" class="form-control" name="proImg" />
+                    </div>
+                    <div class="col">
+                        @Html.ValidationMessageFor(n => n.price, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group col-md-12 row">
+                    <div class="col">
+
+                    </div>
+                    <div class="col">
+                        <input type="submit" class="btn btn-primary"/>
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+    <script src="/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="/Scripts/umd/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery.validate.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
